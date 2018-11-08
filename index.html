@@ -83,9 +83,6 @@
 </head>
 
 <body>
-  <header>
-    蛋店长必中彩票！！
-  </header>
   <div class="main">
     <div class="ball-area">
       <div>**</div>
@@ -103,37 +100,35 @@
 <script>
     const btn = document.getElementById('btn');
 
-    function getArrayItems(arr, num) {
-      let temp_array = [];
-      for (let index in arr) {
-        temp_array.push(arr[index]);
-      }
-      let return_array = [];
-      for (let i = 0; i < num; i++) {
-        if (temp_array.length > 0) {
-          let arrIndex = Math.floor(Math.random() * temp_array.length);
-          return_array[i] = temp_array[arrIndex];
-          temp_array.splice(arrIndex, 1);
-        } else {
+    function sortArr(arr, limit) {
+      const chosenArr = [];
+      while (true) {
+        const chooseItem = arr[Math.floor(Math.random() * arr.length)];
+        console.log(chooseItem);
+        if(chosenArr.indexOf(chooseItem)===-1){
+          chosenArr.push(chooseItem)
+        }
+        if (chosenArr.length === limit) {
           break;
         }
       }
-      return return_array;
+      return chosenArr;
     }
 
     btn.addEventListener('click', () => {
       const redArr = [];
       const blueArr = [];
       for (let i = 1; i <= 33; i++) {
-        if (i <= 16) {
-          blueArr.push(i);
-        }
         redArr.push(i);
       }
-      const chosen_red_arr = getArrayItems(redArr, 6).sort((a, b) => {
+      for (let i = 1; i <= 16; i++) {
+        blueArr.push(i);
+      }
+      console.log(blueArr);
+      const chosen_red_arr = sortArr(redArr, 6).sort((a, b) => {
         return a - b;
       });
-      const chosen_blue_arr = getArrayItems(blueArr, 6).sort((a, b) => {
+      const chosen_blue_arr = sortArr(blueArr, 1).sort((a, b) => {
         return a - b;
       });
       let str = '';
@@ -141,7 +136,7 @@
         const item = chosen_red_arr[i];
         str += `<div>${item}</div>`
       }
-      str += `<div class="blue">${chosen_blue_arr[0]}</div>`
+      str += `<div class="blue">${chosen_blue_arr[0]}</div>`;
       document.getElementsByClassName('ball-area')[0].innerHTML = str;
     });
     document.body.addEventListener('touchmove', e => {
