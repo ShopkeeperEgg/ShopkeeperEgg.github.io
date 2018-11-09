@@ -99,31 +99,29 @@
 </body>
 <script>
     const btn = document.getElementById('btn');
+
+
+    const redArr = [];
+    const blueArr = [];
+    const dom = document.getElementsByClassName('ball-area')[0];
+    for (let i = 1; i <= 33; i++) {
+      redArr.push(i);
+    }
+    for (let i = 1; i <= 16; i++) {
+      blueArr.push(i);
+    }
+
     function sortArr(arr, limit) {
       const chosenArr = [];
-      while (true) {
-        const chooseItem = arr[Math.floor(Math.random() * arr.length)];
-        console.log(chooseItem);
-        if(chosenArr.indexOf(chooseItem)===-1){
-          chosenArr.push(chooseItem)
-        }
-        if (chosenArr.length === limit) {
-          break;
-        }
+      const tempArr = [];
+      Object.assign(tempArr, arr)
+      for (let i = 0; i < limit; i++) {
+        chosenArr.push(tempArr.splice(Math.floor(Math.random() * tempArr.length), 1))
       }
       return chosenArr;
     }
 
     btn.addEventListener('click', () => {
-      const redArr = [];
-      const blueArr = [];
-      for (let i = 1; i <= 33; i++) {
-        redArr.push(i);
-      }
-      for (let i = 1; i <= 16; i++) {
-        blueArr.push(i);
-      }
-      console.log(blueArr);
       const chosen_red_arr = sortArr(redArr, 6).sort((a, b) => {
         return a - b;
       });
@@ -136,7 +134,7 @@
         str += `<div>${item}</div>`
       }
       str += `<div class="blue">${chosen_blue_arr[0]}</div>`;
-      document.getElementsByClassName('ball-area')[0].innerHTML = str;
+      dom.innerHTML = str;
     });
     document.body.addEventListener('touchmove', e => {
       e.preventDefault();
