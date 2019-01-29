@@ -1,4 +1,4 @@
 module.exports = {
-  root: false,
+  root: true,
   extends: ['plugin:vue/essential', '@vue/prettier']
 };
