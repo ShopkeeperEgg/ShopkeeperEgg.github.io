@@ -13,7 +13,7 @@ const routes = [
     component: Index
   }
 ];
-
+ // 1
 const router = new Router({
   // mode: 'history',
   routes
