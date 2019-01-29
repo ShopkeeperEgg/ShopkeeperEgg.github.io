@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #6b6c6e;
+}
+.m-main {
+  background: #f0f2f5;
+  min-height: 100vh;
+  header {
+    display: flex;
+    padding: 20px;
+    background-color: #fff;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+    .logo {
+      width: 30px;
+      height: 30px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  section {
+    padding: 30px;
+  }
+}
+.w960 {
+  width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .btn-area {
+    margin-top: 10px;
+    display: flex;
+  }
+}
+
+.btn {
+  margin: 10px;
+  padding: 10px;
+  color: #fff;
+  border-radius: 6px;
+}
+.ant-layout-header {
+  background: #001529;
+  padding: 0 50px;
+  height: 64px;
+  line-height: 64px;
+}
+
+.table {
+  width: 80%;
+  .table-header {
+  }
+}
+.tr {
+  display: flex;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  &:last-child {
+    border-bottom: 1px solid #ccc;
+  }
+  .td {
+    border-left: 1px solid #ccc;
+    flex: 1;
+    box-sizing: border-box;
+    padding: 10px;
+    &:last-child {
+      border-right: 1px solid #ccc;
+    }
+    input {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      background-color: transparent;
+      border: none;
+      &::placeholder {
+        color: #ccc;
+      }
+    }
+  }
+}
+.m-btn {
+}
