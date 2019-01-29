@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="icon" href="https://weibo.cn/favicon.ico">
-  <title>中彩票！！!</title>
-  <style>
+<style>
     * {
       margin: 0;
       padding: 0;
@@ -80,9 +71,9 @@
       flex-direction: column;
     }
   </style>
-</head>
 
-<body>
+
+<template>
   <div class="main">
     <div class="ball-area">
       <div>**</div>
@@ -95,9 +86,16 @@
     </div>
     <div id="btn">随机选号</div>
   </div>
-  <!-- built files will be auto injected -->
-</body>
+</template>
+
 <script>
+
+export default {
+  name: 'app',
+  data() {
+    return {}
+  },
+  mounted() {
     const btn = document.getElementById('btn');
 
 
@@ -139,5 +137,6 @@
     document.body.addEventListener('touchmove', e => {
       e.preventDefault();
     });
+  },
+};
 </script>
-</html>
