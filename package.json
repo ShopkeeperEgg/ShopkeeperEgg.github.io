@@ -1,0 +1,31 @@
+{
+  "name": "v-annual-report",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --open",
+    "dev": "npm run serve",
+    "build": "vue-cli-service build --mode test",
+    "lint": "vue-cli-service lint",
+    "deploy": "vue-cli-service build",
+    "postbuild": "vue-cli-service ftp"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "qs": "^6.5.2",
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1",
+    "vue-touch": "^1.1.0",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-beta.10",
+    "@vue/cli-service": "^3.0.0-beta.10",
+    "@vue/eslint-config-prettier": "^3.0.0-beta.10",
+    "lint-staged": "^6.0.0",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "vue-template-compiler": "^2.5.13"
+  },
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
+}
