@@ -1,24 +1,27 @@
-import Vue from 'vue';
-import Router from 'vue-router';
+import Vue from "vue";
+import Router from "vue-router";
 
-import Index from './views/Index';
-import Mom from './views/Mom';
+import Index from "./views/Index";
+import Mom from "./views/Mom";
 // import Link from './views/Link';
 
 Vue.use(Router);
 
 const routes = [
   {
-    path: '/',
-    name: 'index',
+    path: "/",
+    name: "index",
     meta: {
-      title: '中彩票！！',
+      title: "中彩票！！"
     },
     component: Index
   },
   {
-    path: '/mom',
-    name: 'shot',
+    path: "/mom",
+    name: "shot",
+    meta: {
+      title: "奖金计算系统"
+    },
     component: Mom
   }
 ];
@@ -37,14 +40,13 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   if (to.meta.title) {
-    document.title = to.meta.title
+    document.title = to.meta.title;
   }
   next();
 });
 
-
 export default router;
 
 export const path = routes.map(item => {
-  return item.path.split('/:')[0];
+  return item.path.split("/:")[0];
 });

@@ -9,47 +9,30 @@
       </div>
     </header>
     <section class="w960">
-      <div class="table">
+      <div class="table" ref="table">
         <div class="table-header">
           <div class="tr">
-            <div class="td">姓名</div>
-            <div class="td">上班天数</div>
-            <div class="td">系数</div>
-            <div class="td">请假天数</div>
+            <div class="td" v-for="(item, index) in config" :key="index">{{item.name}}</div>
             <div class="td">操作</div>
           </div>
           <div class="tr" v-for="(item, index) in list" :key="index">
-            <div class="td">
+            <div class="td" v-for="(i, v) in config" :key="v">
               <label>
-                <input type="text" placeholder="姓名" v-model="item.name">
-              </label>
-            </div>
-            <div class="td">
-              <label>
-                <input type="text" placeholder="上班天数" v-model="item.days">
-              </label>
-            </div>
-            <div class="td">
-              <label>
-                <input type="text" placeholder="系数" v-model="item.xxx">
-              </label>
-            </div>
-            <div class="td">
-              <label>
-                <input type="text" placeholder="请假天数" v-model="item.sss">
+                <input type="text" :placeholder="i.name" v-model="item[i.set]">
               </label>
             </div>
             <div class="td cp" @click="deleteItem(index)">
-              <a href="javascript:;">删除</a>
+              <a class="del" href="javascript:;">删除</a>
             </div>
           </div>
-          <div class="tr">
-            <div class="td"></div>
-            <div class="td"></div>
-            <div class="td"></div>
-            <div class="td"></div>
+          <div style="background: #e8e8e8;" class="tr">
+            <div v-for="(item, index) in config" :key="index" class="td">
+              <label>
+                <input type="text" :placeholder="`默认${item.name}`" v-model="item.default">
+              </label>
+            </div>
             <div class="td cp" @click="add">
-              <a href="javascript:;">添加</a>
+              <a style="color: #6853ff" href="javascript:;">添加</a>
             </div>
           </div>
         </div>
@@ -58,8 +41,9 @@
         <a href="javascript:;" @click="downloadFile" style="padding-left: 60px;padding-right: 60px;" class="btn m-btn-green">计算</a>
         <label for="file">
           <div class="btn m-btn-orange">导入数据</div>
-          <input v-show="0" type="file" id="file" @change="change" ref="file"/>
+          <input v-show="0" type="file" id="file" @input="change" ref="file"/>
         </label>
+        <a href="javascript:;" class="btn m-btn-white" @click="tupian" style="color: #787878;">生成图片</a>
         <a href="javascript:;" class="btn m-btn-blue" @click="exportData">导出数据</a>
         <a href="javascript:;" class="btn m-btn-red" @click="clearAll">清空所有数据</a>
       </div>
@@ -70,13 +54,21 @@
 
 
 <script>
+import html2canvas from "html2canvas";
+
 export default {
   data() {
     return {
-      list: [
-        // { name: "张三", days: "123", xxx: "0.8", sss: "0.45" }
+      config: [
+        { name: "姓名", set: "name" },
+        { name: "上班天数", set: "days" },
+        { name: "系数", set: "obj" },
+        { name: "额外奖金", set: "money" },
+        { name: "扣除奖金", set: "money_c" },
+        { name: "请假天数", set: "qj_days" }
       ],
-      addItem: { name: "", days: "", xxx: "", sss: "" },
+      list: [],
+      addItem: {},
       fullscreenLoading: false, // 加载中
       imFile: "", // 导入文件el
       outFile: "", // 导出文件el
@@ -88,6 +80,9 @@ export default {
     add() {
       const obj = {};
       Object.assign(obj, this.addItem);
+      for (let i = 0; i < this.config.length; i++) {
+        obj[this.config[i].set] = this.config[i].default;
+      }
       this.list.push(obj);
       setTimeout(() => {
         this.clearAddItem();
@@ -141,6 +136,16 @@ export default {
         }
       };
     },
+    tupian() {
+      const shareContent = this.$refs.table;
+      html2canvas(shareContent).then(canvas => {
+        const base64 = canvas.toDataURL("image/png");
+        const img = new Image();
+        img.src = base64;
+        document.body.appendChild(img);
+        alert("生成图片成功");
+      });
+    },
     deleteItem(index) {
       this.list.splice(index, 1);
     },
@@ -180,6 +185,9 @@ export default {
     const member = window.localStorage.getItem("member");
     if (member) {
       this.list = JSON.parse(member);
+    }
+    for (let i = 0; i < this.config.length; i++) {
+      this.addItem[this.config[i].set] = "";
     }
   },
   mounted() {

@@ -95,9 +95,13 @@
       border: none;
       &::placeholder {
         color: #ccc;
+        font-size: 12px;
       }
     }
   }
 }
 .m-btn {
+}
+.del {
+  color: #ff6baa;
 }
