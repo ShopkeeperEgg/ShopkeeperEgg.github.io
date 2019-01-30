@@ -1,4 +1,69 @@
-<style>
+<style scoped="scoped">
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+header {
+  text-align: center;
+  font-family: "PingFang SC";
+  font-size: 20px;
+  padding: 10px;
+  color: #fff;
+  font-weight: 500;
+  background-image: linear-gradient(135deg, #612fff, #992cff);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.ball-area {
+  display: flex;
+  padding: 150px 30px 60px 30px;
+  justify-content: space-around;
+  width: 100%;
+  box-sizing: border-box;
+}
+.ball-area > div {
+  color: #f54646;
+  border: 1.5px solid #f54646;
+  display: flex;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.ball-area .blue {
+  color: #39f;
+  border: 1.5px solid #39f;
+  margin-left: 10px;
+}
+#btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  background-color: #f54646;
+  color: #fff;
+  border-radius: 25px;
+  font-size: 18px;
+  border: none;
+  margin: 50px auto;
+}
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
 </style>
 
 

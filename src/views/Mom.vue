@@ -20,19 +20,27 @@
           </div>
           <div class="tr" v-for="(item, index) in list" :key="index">
             <div class="td">
-              <input type="text" placeholder="姓名" v-model="item.name">
+              <label>
+                <input type="text" placeholder="姓名" v-model="item.name">
+              </label>
             </div>
             <div class="td">
-              <input type="text" placeholder="上班天数" v-model="item.days">
+              <label>
+                <input type="text" placeholder="上班天数" v-model="item.days">
+              </label>
             </div>
             <div class="td">
-              <input type="text" placeholder="系数" v-model="item.xxx">
+              <label>
+                <input type="text" placeholder="系数" v-model="item.xxx">
+              </label>
             </div>
             <div class="td">
-              <input type="text" placeholder="请假天数" v-model="item.sss">
+              <label>
+                <input type="text" placeholder="请假天数" v-model="item.sss">
+              </label>
             </div>
-            <div class="td">
-              <a href="javascript:;" @click="deleteItem(index)">删除</a>
+            <div class="td cp" @click="deleteItem(index)">
+              <a href="javascript:;">删除</a>
             </div>
           </div>
           <div class="tr">
@@ -40,8 +48,8 @@
             <div class="td"></div>
             <div class="td"></div>
             <div class="td"></div>
-            <div class="td">
-              <a href="javascript:;" @click="add">添加</a>
+            <div class="td cp" @click="add">
+              <a href="javascript:;">添加</a>
             </div>
           </div>
         </div>
@@ -161,7 +169,7 @@ export default {
       const filename = prompt("请输入导出文件名称");
       if (filename) {
         if (confirm("是否生成excel文件（测试版）")) {
-          this.downloadData(filename + "xls", str);
+          this.downloadData(filename + ".xls", str);
         } else {
           this.downloadData(filename, str);
         }
