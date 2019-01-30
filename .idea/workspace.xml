@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10661d80-2065-4b01-808e-fdd944c0ec0d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Mom.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Mom.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Index.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,10 +15,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Mom.vue" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Mom.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/views/Mom.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
+                <state relative-caret-position="885">
                   <caret line="140" column="30" selection-start-line="140" selection-start-column="30" selection-end-line="140" selection-end-column="30" />
                   <folding>
                     <element signature="n#src#0;n#img#0;n#div#0;n#header#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -41,6 +36,11 @@
                   </folding>
                 </state>
               </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="app.d831b1e4.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/app.d831b1e4.css">
+              <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
           <file leaf-file-name="app.888a9042.css" pinned="false" current-in-tab="false">
@@ -61,11 +61,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Index.vue" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Index.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/views/Index.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="21" selection-start-column="21" selection-end-column="21" />
+                <state relative-caret-position="60">
+                  <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -77,7 +77,7 @@
           <file leaf-file-name="index.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/scss/index.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="402">
+                <state relative-caret-position="462">
                   <caret line="98" column="7" selection-start-line="98" selection-start-column="7" selection-end-line="98" selection-end-column="7" />
                 </state>
               </provider>
@@ -166,11 +166,11 @@
         <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/1.html" />
-        <option value="$PROJECT_DIR$/src/views/Index.vue" />
         <option value="$PROJECT_DIR$/src/App.vue" />
         <option value="$PROJECT_DIR$/src/router.js" />
         <option value="$PROJECT_DIR$/src/scss/index.scss" />
         <option value="$PROJECT_DIR$/src/views/Mom.vue" />
+        <option value="$PROJECT_DIR$/src/views/Index.vue" />
       </list>
     </option>
   </component>
@@ -361,12 +361,12 @@
       <workItem from="1541729754998" duration="2620000" />
       <workItem from="1548747221393" duration="336000" />
       <workItem from="1548747584192" duration="12356000" />
-      <workItem from="1548816892036" duration="5681000" />
+      <workItem from="1548816892036" duration="6037000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24909000" />
+    <option name="totallyTimeSpent" value="25265000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-180" width="1920" height="1080" extended-state="0" />
@@ -378,10 +378,10 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32935324" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32935324" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.26965174" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.26965174" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -548,13 +548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -577,14 +570,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/index.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
+        <state relative-caret-position="462">
           <caret line="98" column="7" selection-start-line="98" selection-start-column="7" selection-end-line="98" selection-end-column="7" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/app.d831b1e4.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Mom.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
+        <state relative-caret-position="885">
           <caret line="140" column="30" selection-start-line="140" selection-start-column="30" selection-end-line="140" selection-end-column="30" />
           <folding>
             <element signature="n#src#0;n#img#0;n#div#0;n#header#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -600,6 +596,13 @@
             <element signature="e#8374#8849#0" />
             <element signature="e#8864#9341#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
         </state>
       </provider>
     </entry>

@@ -1,24 +1,7 @@
-<style scoped="scoped">
+<style>
 * {
   margin: 0;
   padding: 0;
-}
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
-header {
-  text-align: center;
-  font-family: "PingFang SC";
-  font-size: 20px;
-  padding: 10px;
-  color: #fff;
-  font-weight: 500;
-  background-image: linear-gradient(135deg, #612fff, #992cff);
-  position: fixed;
-  top: 0;
-  width: 100%;
 }
 .ball-area {
   display: flex;
