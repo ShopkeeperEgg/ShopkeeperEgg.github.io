@@ -37,7 +37,8 @@
           <div class="tr" v-for="(item, index) in list" :key="index">
             <div class="td" v-for="(i, v) in config" :key="v">
               <label>
-                <input type="text" :placeholder="i.name" v-model="item[i.set]">
+                <input type="text" v-if="i.string" :placeholder="i.name" v-model="item[i.set]">
+                <input type="number" v-else :placeholder="i.name" v-model="item[i.set]">
               </label>
             </div>
             <div class="td cp" @click="deleteItem(index)">
@@ -47,7 +48,8 @@
           <div style="background: #e8e8e8;" class="tr">
             <div v-for="(item, index) in config" :key="index" class="td">
               <label>
-                <input type="text" :placeholder="`默认${item.name}`" v-model="item.default">
+                <input v-if="item.set === 'name'" type="text" :placeholder="`默认${item.name}`" v-model="item.default">
+                <input v-else type="number" :placeholder="`默认${item.name}`" v-model="item.default">
               </label>
             </div>
             <div class="td cp" @click="add">
@@ -152,7 +154,7 @@ export default {
     return {
       config: [
         { name: "系数", set: "xs" },
-        { name: "姓名", set: "name" },
+        { name: "姓名", set: "name", string: true },
         { name: "80%奖金", set: "jj" },
         { name: "调整", set: "tz" },
         { name: "手术提成", set: "sstc" },
@@ -321,7 +323,7 @@ export default {
       }
     },
     so2(num) {
-      return Math.round(+num * 10000) / 10000;
+      return Math.round(+num * 10000) / 10000 || 0;
     },
     jsZs() {
       function n(m) {
