@@ -8,16 +8,16 @@ import Mom from "./views/Mom";
 Vue.use(Router);
 
 const routes = [
+  // {
+  //   path: "/",
+  //   name: "index",
+  //   meta: {
+  //     title: "中彩票！！"
+  //   },
+  //   component: Index
+  // },
   {
     path: "/",
-    name: "index",
-    meta: {
-      title: "中彩票！！"
-    },
-    component: Index
-  },
-  {
-    path: "/mom",
     name: "shot",
     meta: {
       title: "奖金计算系统"

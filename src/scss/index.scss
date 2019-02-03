@@ -2,11 +2,10 @@
   margin: 0;
   padding: 0;
   font-size: 14px;
-  color: #6b6c6e;
+  color: #404143;
   font-family: "PingFang SC", "微软雅黑";
 }
 .m-main {
-  background: #f0f2f5;
   min-height: 100vh;
   header {
     display: flex;
@@ -73,6 +72,9 @@
   &:last-child {
     border-bottom: 1px solid #ccc;
   }
+  &:hover {
+    background-color: rgba(117, 204, 199, 0.19);
+  }
   .td {
     border-left: 1px solid #ccc;
     flex: 1;
@@ -102,6 +104,11 @@
   }
 }
 .m-btn {
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
 }
 .del {
   color: #ff6baa;
