@@ -13,6 +13,7 @@
       </div>
     </header>
     <section class="w960">
+      <div class="tip">本网站仅供学习，请勿用于商业用途！由本网站计算造成的后果，网站作者和提供网站者不承担任何责任！</div>
       <template v-if="step===0">
       <div class="table" style="margin-bottom: 40px;">
         <div class="tr">
@@ -339,6 +340,13 @@ export default {
       return Math.round(+num * 1000000) / 1000000 || 0;
     },
     jsZs() {
+      if (
+        !confirm(
+          '本网站仅供学习，请勿用于商业用途！ \n 由本网站计算造成的后果，网站作者和提供网站者不承担任何责任！ \n 点击下方的"确定"即代表已阅读并同意 \n 您确认进行计算么？'
+        )
+      ) {
+        return;
+      }
       function n(m) {
         if (!m) {
           return 0;
