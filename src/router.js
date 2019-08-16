@@ -3,6 +3,7 @@ import Router from "vue-router";
 
 import Index from "./views/Index";
 import Mom from "./views/Mom";
+import Test from "./views/Test";
 // import Link from './views/Link';
 
 Vue.use(Router);
@@ -23,6 +24,14 @@ const routes = [
       title: "奖金计算系统"
     },
     component: Mom
+  },
+  {
+    path: "/test",
+    name: "test",
+    meta: {
+      title: "test"
+    },
+    component: Test
   }
 ];
 
