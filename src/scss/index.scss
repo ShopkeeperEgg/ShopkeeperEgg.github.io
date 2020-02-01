@@ -60,6 +60,17 @@
 .table {
   width: 80%;
   .table-header {
+    .td {
+      .del-icon {
+        display: none;
+        padding: 5px;
+      }
+      &:hover {
+        .del-icon {
+          display: inline-block;
+        }
+      }
+    }
   }
 }
 .cp {

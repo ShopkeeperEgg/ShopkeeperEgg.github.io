@@ -13,7 +13,6 @@
       </div>
     </header>
     <section class="w960">
-      <div class="tip">本网站仅供学习，请勿用于商业用途！由本网站计算造成的后果，网站作者和提供网站者不承担任何责任！</div>
       <template v-if="step===0">
       <div class="table" style="margin-bottom: 40px;">
         <div class="tr">
@@ -33,14 +32,14 @@
       <div class="table">
         <div class="table-header">
           <div class="tr">
-            <div class="td" v-for="(item, index) in config" :key="index">{{item.name}}</div>
+            <div class="td" v-for="(item, index) in config" :key="index">{{item.name}} <a class="del-icon" @click="deleteAllCol(item)" href="javascript:;">x</a> </div>
             <div class="td">操作</div>
           </div>
           <div class="tr" v-for="(item, index) in list" :key="index">
             <div class="td" v-for="(i, v) in config" :key="v">
               <label>
-                <input type="text" v-if="i.string" :placeholder="i.name" v-model="item[i.set]">
-                <input type="number" v-else :placeholder="i.name" v-model="item[i.set]">
+                <input :ref="index.toString() + '-' + v.toString()" type="text" v-if="i.string" :placeholder="i.name" v-model="item[i.set]">
+                <input @keyup.enter="keyup(index, v)" :ref="index.toString() + '-' + v.toString()" type="number" v-else :placeholder="i.name" v-model="item[i.set]">
               </label>
             </div>
             <div class="td">
@@ -340,13 +339,13 @@ export default {
       return Math.round(+num * 1000000) / 1000000 || 0;
     },
     jsZs() {
-      if (
-        !confirm(
-          '本网站仅供学习，请勿用于商业用途！ \n 由本网站计算造成的后果，网站作者和提供网站者不承担任何责任！ \n 点击下方的"确定"即代表已阅读并同意 \n 您确认进行计算么？'
-        )
-      ) {
-        return;
-      }
+      // if (
+      //   !confirm(\`
+      //     '本网站仅供学习，请勿用于商业用途！ \n 由本网站计算造成的后果，网站作者和提供网站者不承担任何责任！ \n 点击下方的"确定"即代表已阅读并同意 \n 您确认进行计算么？'
+      //   )
+      // ) {
+      //   return;
+      // }
       function n(m) {
         if (!m) {
           return 0;
@@ -398,6 +397,21 @@ export default {
       }
       // 总缺勤奖金
       this.step = 1;
+    },
+    deleteAllCol(item) {
+      if (!confirm(`确认删除 ${item.name} 整列？？？？删除后不可恢复`)) {
+        return;
+      }
+      for (let i = 0; i < this.list.length; i++) {
+        this.list[i][item.set] = '';
+      }
+    },
+    keyup(index1, index2) {
+      const nextDom = this.$refs[(index1 + 1).toString() + '-' + index2.toString()];
+      if(nextDom){
+        this.list[index1 + 1][this.config[index2].set] = this.list[index1][this.config[index2].set];
+        nextDom[0].focus();
+      }
     }
   },
   created() {
