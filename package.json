@@ -11,7 +11,7 @@
     "html2canvas": "^1.0.0-alpha.12",
     "vue": "^2.5.21",
     "vue-router": "^3.0.1",
-    "xlsx": "^0.14.1"
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",
